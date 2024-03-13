@@ -5,7 +5,7 @@ metadata:
     alm-examples: |-
       [
         {
-          "apiVersion": "cnf-certifications.redhat.com/v1alpha1",
+          "apiVersion": "cnf-certifications.openshift.io/v1alpha1",
           "kind": "CnfCertificationSuiteRun",
           "metadata": {
             "labels": {
@@ -43,7 +43,7 @@ spec:
         API
       displayName: Cnf Certification Suite Run
       kind: CnfCertificationSuiteRun
-      name: cnfcertificationsuiteruns.cnf-certifications.redhat.com
+      name: cnfcertificationsuiteruns.cnf-certifications.openshift.io
       version: v1alpha1
   description: Deploys the CNF Certification Suite Pod to run the certification suite
     on target CNF resources.
@@ -255,7 +255,7 @@ spec:
           - update
           - watch
         - apiGroups:
-          - cnf-certifications.redhat.com
+          - cnf-certifications.openshift.io
           resources:
           - cnfcertificationsuiteruns
           verbs:
@@ -267,13 +267,13 @@ spec:
           - update
           - watch
         - apiGroups:
-          - cnf-certifications.redhat.com
+          - cnf-certifications.openshift.io
           resources:
           - cnfcertificationsuiteruns/finalizers
           verbs:
           - update
         - apiGroups:
-          - cnf-certifications.redhat.com
+          - cnf-certifications.openshift.io
           resources:
           - cnfcertificationsuiteruns/status
           verbs:
@@ -312,7 +312,7 @@ spec:
     generateName: vcnfcertificationsuiterun.kb.io
     rules:
     - apiGroups:
-      - cnf-certifications.redhat.com
+      - cnf-certifications.openshift.io
       apiVersions:
       - v1alpha1
       operations:
@@ -323,4 +323,4 @@ spec:
     sideEffects: None
     targetPort: 9443
     type: ValidatingAdmissionWebhook
-    webhookPath: /validate-cnf-certifications-redhat-com-v1alpha1-cnfcertificationsuiterun
+    webhookPath: /validate-cnf-certifications-openshift-io-v1alpha1-cnfcertificationsuiterun
